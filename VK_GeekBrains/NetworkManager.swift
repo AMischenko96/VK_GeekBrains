@@ -22,8 +22,8 @@ class VKService {
             
             let methodName: Parameters = [
                 "": getData,
-                "access_token": apiKey,
-                "v": "5.130"
+                "access_token": apiKey as Any,
+                "v": "5.131"
             ]
             
         // составляем URL из базового адреса сервиса и конкретного пути к ресурсу

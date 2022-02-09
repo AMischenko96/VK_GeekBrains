@@ -7,19 +7,27 @@
 
 import UIKit
 
+//VKUser
 struct VKUser {
     let nameFriend: String
     let avatar: UIImage
     let userPhoto: [UIImage]
 }
+
+//VKGroup
 struct VKGroup {
     let nameGroup: String
     let avatarGroup: UIImage
 }
+var mygroup: [VKGroup] = []
+var globalGroup: [VKGroup] = []
+
+//VKNews
 struct VKNews {
     let newsText: String
     let newsPhoto: UIImage
 }
+var myNews: [VKNews] = []
 
 let users: [VKUser] =
     [ VKUser (nameFriend: "Леонардо Ди Каприо",
@@ -46,6 +54,4 @@ let users: [VKUser] =
                 [UIImage (named: "Николь1")!,
                  UIImage (named: "Николь2")!,
                  UIImage (named: "Николь3")!]),]
-var mygroup: [VKGroup] = []
-var globalGroup: [VKGroup] = []
-var myNews: [VKNews] = []
+

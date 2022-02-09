@@ -36,26 +36,35 @@ class LogInScreen: UIViewController {
                 }
             }
         
-    
+    // Клавиатура появляется
     @objc func keyboardWasShown (notification: Notification) {
+        
+    // Размер
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
         let contentInsets = UIEdgeInsets (top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
+     // Отступ внизу UIScrollView
         self.scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
     }
+    // Клавиатура исчезает
     @objc func keyboardWillBeHidden (notification: Notification) {
+     
+    //Отступ 0
         let contentInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInsets
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+    //Уведомление при появлении
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    // Жест нажатия
         let hideKeabordGesture = UITapGestureRecognizer (target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeabordGesture)
         self.view.backgroundColor = UIColor (patternImage: UIImage (named: "background")!)
@@ -75,7 +84,7 @@ class LogInScreen: UIViewController {
     private func checkLogAndPass() -> Bool {
         return loginInput.text == login && passwordInput.text == password
     }
-    
+    // MARK: - Point
     private func pointPrepare (cView: UIView, delay: Double) {
         cView.backgroundColor = .black
         cView.layer.cornerRadius = 5
