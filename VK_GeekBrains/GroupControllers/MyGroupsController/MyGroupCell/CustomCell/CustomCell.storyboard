@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="99" id="X8r-d5-mWO" customClass="CustomTableViewCell" customModule="WeatherGeekBrains" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="576" height="99"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8r-d5-mWO" id="Q9V-Rq-X5j">
+                        <rect key="frame" x="0.0" y="0.0" width="576" height="99"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-p9-3Uw">
+                                <rect key="frame" x="148" y="0.0" width="428" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roo-qY-OlC" customClass="TestView" customModule="WeatherGeekBrains" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="117"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="Xak-7q-Emk"/>
+                                    <constraint firstAttribute="width" constant="128" id="w42-Pq-uOJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cBQ-p9-3Uw" secondAttribute="trailing" id="EJF-0I-n6c"/>
+                            <constraint firstAttribute="bottom" secondItem="cBQ-p9-3Uw" secondAttribute="bottom" id="FZf-FX-UrK"/>
+                            <constraint firstAttribute="bottom" secondItem="roo-qY-OlC" secondAttribute="bottom" id="NBV-r8-F07"/>
+                            <constraint firstItem="roo-qY-OlC" firstAttribute="leading" secondItem="Q9V-Rq-X5j" secondAttribute="leading" id="Xwx-cW-NaQ"/>
+                            <constraint firstItem="cBQ-p9-3Uw" firstAttribute="leading" secondItem="roo-qY-OlC" secondAttribute="trailing" constant="20" id="awC-y1-nNX"/>
+                            <constraint firstItem="roo-qY-OlC" firstAttribute="top" secondItem="Q9V-Rq-X5j" secondAttribute="top" id="ceB-Gh-Yhc"/>
+                            <constraint firstItem="cBQ-p9-3Uw" firstAttribute="top" secondItem="Q9V-Rq-X5j" secondAttribute="top" id="eci-sv-DaQ"/>
+                        </constraints>
+                    </tableViewCellContentView>
+                    <connections>
+                        <outlet property="avatarImage" destination="roo-qY-OlC" id="hRq-4b-RXk"/>
+                        <outlet property="nameLabel" destination="cBQ-p9-3Uw" id="qZ0-a3-9i4"/>
+                    </connections>
+                </tableViewCell>
+            </objects>
+            <point key="canvasLocation" x="-16" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
